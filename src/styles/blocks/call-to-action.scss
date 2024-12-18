@@ -1,0 +1,63 @@
+.call-to-action {
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &--right {
+      text-align: right;
+      align-items: flex-end;
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__phone {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 27px;
+    text-transform: uppercase;
+
+    @include transition(opacity);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__call {
+    display: block;
+    position: relative;
+    width: fit-content;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: -8px;
+      height: 1px;
+      width: 100%;
+      background-color: #fff;
+    }
+
+    @include transition(opacity);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

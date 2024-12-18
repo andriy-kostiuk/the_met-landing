@@ -1,0 +1,35 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-laptop {
+  @media (min-width: $laptop-width) {
+    @content;
+  }
+}
+
+@mixin page-padding-inline {
+  padding-inline: $mobile-padding-inline;
+
+  @include on-tablet {
+    padding-inline: $tablet-padding-inline;
+  }
+
+  @include on-laptop {
+    padding-inline: $laptop-padding-inline;
+  }
+}
+
+@mixin transition($value, $time: 0.3s) {
+  transition: $value $time;
+}
+
+@mixin hover-scale($scale: 1.2) {
+  @include transition(transform);
+
+  &:hover {
+    transform: scale($scale);
+  }
+}
